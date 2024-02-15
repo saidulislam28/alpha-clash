@@ -16,6 +16,13 @@
 // capture keyboard key press 
 function handleKeyboardKeyUpEvent(event) {
   const playerPressed = event.key;
+
+
+// stop the game if pressed 'esc'
+if(playerPressed == 'Escape'){
+  gameOver();
+}
+
   console.log('player pressed', playerPressed);
 
   // get the expected to press 
@@ -130,5 +137,6 @@ function gameOver() {
   setTextElementValueById('last-score', lastScore);
 
   // clear the last alphabet
-  
+  const currentAlphabet = getElementTextById('current-alphabet');
+  removeBackgroundColorById(currentAlphabet)
 }
